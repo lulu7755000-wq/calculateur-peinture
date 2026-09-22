@@ -210,6 +210,67 @@ button:hover {
     margin-top: 2rem;
 }
 
+.breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.9;
+}
+
+.breadcrumb a {
+    color: white;
+}
+
+.articles-nav {
+    background: #e8f0f7;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.articles-nav a {
+    color: #2c5f8a;
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
+.btn-link {
+    display: inline-block;
+    background: #2c5f8a;
+    color: white !important;
+    text-decoration: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.btn-link:hover {
+    background: #1e4a6e;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+.table th, .table td {
+    border: 1px solid #e1e8ed;
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+}
+
+.table th {
+    background: #2c5f8a;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background: #f5f7fa;
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 1.4rem;
