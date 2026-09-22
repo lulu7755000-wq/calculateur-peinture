@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de peinture : combien de litres pour votre pièce ?</title>
+    <meta name="description" content="Calculateur gratuit : découvrez en 10 secondes combien de litres de peinture acheter pour repeindre vos murs et plafond. Formule, rendement et budget estimé.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Calculateur de peinture : combien de litres acheter ?</h1>
+            <p class="subtitle">Gratuit et instantané — obtenez la quantité exacte de peinture pour votre pièce</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="calculator-box">
+            <h2>Vos informations</h2>
+            <form id="paintForm">
+                <div class="form-grid">
+                    <label>
+                        Longueur de la pièce (m)
+                        <input type="number" id="length" min="0.1" step="0.1" value="4" required>
+                    </label>
+                    <label>
+                        Largeur de la pièce (m)
+                        <input type="number" id="width" min="0.1" step="0.1" value="3" required>
+                    </label>
+                    <label>
+                        Hauteur sous plafond (m)
+                        <input type="number" id="height" min="1" step="0.1" value="2.5" required>
+                    </label>
+                    <label>
+                        Nombre de portes
+                        <input type="number" id="doors" min="0" step="1" value="1">
+                    </label>
+                    <label>
+                        Nombre de fenêtres
+                        <input type="number" id="windows" min="0" step="1" value="1">
+                    </label>
+                    <label>
+                        Nombre de couches
+                        <select id="coats">
+                            <option value="1">1 couche (rarement suffisant)</option>
+                            <option value="2" selected>2 couches (standard)</option>
+                            <option value="3">3 couches (murs très abîmés)</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="checkbox-row">
+                    <label>
+                        <input type="checkbox" id="paintCeiling" checked>
+                        Inclure le plafond
+                    </label>
+                    <label>
+                        <input type="checkbox" id="skipOpenings" checked>
+                        Déduire portes et fenêtres
+                    </label>
+                </div>
+                <button type="submit">Calculer la quantité de peinture</button>
+            </form>
+
+            <div id="results" class="results" hidden>
+                <h2>Résultat</h2>
+                <div class="result-grid">
+                    <div class="result-card">
+                        <span class="result-label">Surface à peindre</span>
+                        <span class="result-value" id="surfaceOut"></span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-label">Peinture nécessaire</span>
+                        <span class="result-value" id="litersOut"></span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-label">Budget estimé</span>
+                        <span class="result-value" id="budgetOut"></span>
+                    </div>
+                </div>
+                <p class="result-tip" id="tipOut"></p>
+                <div class="buy-links">
+                    <a href="https://www.amazon.fr/s?k=peinture+murale+blanche&tag=techiaactu21-21" target="_blank" rel="noopener">Voir les peintures sur Amazon</a>
+                    <a href="https://www.amazon.fr/s?k=kit+peinture+roller&tag=techiaactu21-21" target="_blank" rel="noopener">Voir les kits roller/peinture</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-box">
+            <h2>Comment calculer la peinture nécessaire ?</h2>
+            <p>La méthode est simple :</p>
+            <ol>
+                <li><strong>Mesurez les murs :</strong> additionnez le périmètre (2 × (longueur + largeur)) puis multipliez par la hauteur.</li>
+                <li><strong>Soustrayez les ouvertures :</strong> retirez environ 2 m² par porte et 1,5 m² par fenêtre.</li>
+                <li><strong>Ajoutez le plafond :</strong> longueur × largeur (si vous le peignez).</li>
+                <li><strong>Tenez compte du rendement :</strong> une bonne peinture couvre 8 à 12 m² par litre et par couche. Comptez 2 couches dans la plupart des cas.</li>
+            </ol>
+            <p><strong>Formule rapide :</strong> Litres = (Surface totale ÷ 10) × Nombre de couches</p>
+        </section>
+
+        <section class="content-box faq">
+            <h2>Questions fréquentes</h2>
+
+            <h3>Combien de litres pour peindre une chambre de 12 m² ?</h3>
+            <p>Pour une chambre de 12 m² (4 × 3 m), hauteur 2,5 m, avec 1 porte et 1 fenêtre, comptez environ <strong>12 à 14 m² de murs</strong> plus 12 m² de plafond. Avec 2 couches, il faut en moyenne <strong>5 litres</strong> de peinture (un seau de 5 L suffit presque toujours).</p>
+
+            <h3>Quel rendement pour une peinture murale ?</h3>
+            <p>Les peintures mates (intérieures) couvrent en général <strong>8 à 10 m²/L</strong> par couche. Les peintures satinées ou lessivables : <strong>10 à 12 m²/L</strong>. Sur un mur très poreux ou foncé, prévoyez 10 à 20 % de plus.</p>
+
+            <h3>Faut-il toujours 2 couches de peinture ?</h3>
+            <p>Oui, dans 90 % des cas. La première couche imprègne, la deuxième uniformise la couleur. Une seule couche donne souvent un rendu haché, surtout si vous changez de teinte.</p>
+
+            <h3>Combien coûte la peinture pour une pièce ?</h3>
+            <p>Une peinture d'intérieur correcte coûte entre <strong>4 et 10 € le litre</strong>. Pour une chambre classique, comptez <strong>25 à 50 €</strong> de peinture (hors outils). Les kits roller/peinture démarrent vers 15-20 € sur Amazon.</p>
+
+            <h3>Que faire s'il reste de la peinture ?</h3>
+            <p>Refermez bien le seau (l'air l'abîme) et stockez-le à l'abri du gel. Elle servira pour les retouches — c'est le meilleur investissement : prévoyez toujours 10 % de plus que le calcul exact.</p>
+        </section>
+
+        <section class="content-box">
+            <h2>Astuce pro pour ne pas en acheter trop</h2>
+            <p>Ajoutez <strong>10 % au résultat</strong> : vous aurez de quoi faire les retouches (clous, éclats, taches) sans rouvrir le seau. Mieux vaut 1 litre de trop qu'un ton différent dans 6 mois — les fabricants retouchent régulièrement leurs nuances.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Calculateur gratuit — résultat indicatif. Vérifiez toujours le rendement indiqué sur votre pot de peinture.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
