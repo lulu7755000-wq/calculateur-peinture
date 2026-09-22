@@ -245,6 +245,8 @@ button:hover {
     color: #2c5f8a;
     font-weight: 600;
     margin-right: 0.25rem;
+    display: inline-block;
+    margin-bottom: 0.35rem;
 }
 
 .btn-link {
@@ -282,6 +284,10 @@ button:hover {
 
 .table tr:nth-child(even) {
     background: #f5f7fa;
+}
+
+.content-box a {
+    color: #2c5f8a;
 }
 
 @media (max-width: 600px) {
