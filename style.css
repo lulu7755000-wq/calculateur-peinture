@@ -24,6 +24,19 @@ body {
     text-align: center;
 }
 
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.logo {
+    flex-shrink: 0;
+    border-radius: 12px;
+}
+
 h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
